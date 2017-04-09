@@ -1,1 +1,4 @@
-sceneSetups: []
+sceneSetups:
+- path: Assets/MyFirst3DShootingGame.unity
+  isLoaded: 1
+  isActive: 1
