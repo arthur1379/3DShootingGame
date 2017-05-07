@@ -75,7 +75,7 @@ public class EnemyHealth : MonoBehaviour
         GetComponent <UnityEngine.AI.NavMeshAgent> ().enabled = false; // 敵人追蹤關閉
         GetComponent <Rigidbody> ().isKinematic = true; // 物理碰撞功能關閉
         isSinking = true; // 掉落狀態 = T 
-        //ScoreManager.score += scoreValue;
+        ScoreManager.score += scoreValue; // 敵人死掉就 加10分
         Destroy (gameObject, 2f); // 兩秒後敵人刪除
     }
 }
