@@ -10,7 +10,7 @@ public class EnemyAttack : MonoBehaviour
     Animator anim; // 敵人的Animator
     GameObject player; // 主角的物件
     PlayerHealth playerHealth; // 主角物件上的 playerHealth.cs
-    //EnemyHealth enemyHealth;
+    EnemyHealth enemyHealth; 
     bool playerInRange; // 是否再攻擊範圍裡面
     float timer; // 時間計算
 
@@ -46,7 +46,7 @@ public class EnemyAttack : MonoBehaviour
     {
         timer += Time.deltaTime; // 時間累加
 
-        if(timer >= timeBetweenAttacks && playerInRange/* && enemyHealth.currentHealth > 0*/) // 時間 >= 攻擊攻擊時間間隔 && 可以攻擊
+        if(timer >= timeBetweenAttacks && playerInRange && enemyHealth.currentHealth > 0) // 時間 >= 攻擊攻擊時間間隔 && 可以攻擊
         {
             Attack (); // 觸發攻擊的函式
         }
