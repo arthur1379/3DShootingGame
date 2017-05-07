@@ -18,7 +18,7 @@ public class PlayerHealth : MonoBehaviour
     Animator anim; // 角色動畫
     AudioSource playerAudio; // 角色音效
     PlayerMovement playerMovement; // 角色控制的程式
-    //PlayerShooting playerShooting;
+    PlayerShooting playerShooting; // 角色射擊的程式
     bool isDead; // 判斷是否死亡
     bool damaged; // 判斷是否受到傷害
 
@@ -28,7 +28,7 @@ public class PlayerHealth : MonoBehaviour
         anim = GetComponent <Animator> (); 
         playerAudio = GetComponent <AudioSource> ();
         playerMovement = GetComponent <PlayerMovement> ();
-        //playerShooting = GetComponentInChildren <PlayerShooting> ();
+        playerShooting = GetComponentInChildren <PlayerShooting> ();
         currentHealth = startingHealth; // 起始血量 = 現在血量
     }
 
@@ -68,7 +68,7 @@ public class PlayerHealth : MonoBehaviour
     {
         isDead = true; // 布林值 isDead = true
 
-        //playerShooting.DisableEffects ();
+        playerShooting.DisableEffects (); // 關閉射擊特效
 
         anim.SetTrigger ("Die"); // 觸發Animator控制器的 Die Trigger
 
@@ -76,7 +76,7 @@ public class PlayerHealth : MonoBehaviour
         playerAudio.Play ();  // 撥放一次
 
         playerMovement.enabled = false; // 角色移動的程式 關閉
-        //playerShooting.enabled = false;
+        playerShooting.enabled = false; // 射擊功能關閉
     }
 
 
