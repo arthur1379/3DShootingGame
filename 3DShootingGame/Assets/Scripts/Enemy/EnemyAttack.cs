@@ -19,7 +19,8 @@ public class EnemyAttack : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag ("Player"); // 找到主角物件
         playerHealth = player.GetComponent <PlayerHealth> (); // 指定主角物件上的PlayerHealth
-        //enemyHealth = GetComponent<EnemyHealth>();
+        print(player);
+        enemyHealth = GetComponent<EnemyHealth>();
         anim = GetComponent <Animator> (); // 敵人自己的Animator
     }
 
